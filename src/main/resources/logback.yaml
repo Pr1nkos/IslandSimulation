@@ -1,0 +1,21 @@
+configuration:
+  status: WARN
+  
+  appenders:
+    console:
+      name: Console
+      target: SYSTEM_OUT
+      PatternLayout:
+        pattern: "%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"
+  
+  loggers:
+    logger:
+      - name: "ru.pr1nkos"
+        level: DEBUG
+      - name: "Island"
+        level: INFO
+  
+  root:
+    level: INFO
+    AppenderRef:
+      ref: Console
