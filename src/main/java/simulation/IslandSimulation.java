@@ -17,16 +17,25 @@ import lombok.SneakyThrows;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.swing.*;
+
 public class IslandSimulation {
     private final Logger logger = LoggerFactory.getLogger(IslandSimulation.class);
     private final Logger animalLogger = LoggerFactory.getLogger(Animal.class);
     private final Island island;
+    private IslandFrame islandFrame;
     private final AnimalFactory animalFactory = new AnimalFactory();
     private int simulationCount = 0;
 
     public IslandSimulation(int width, int height) {
         this.island = new Island(width, height);
         initializeAnimals();
+
+        // Создаем и показываем окно в потоке Event Dispatch Thread (EDT)
+        SwingUtilities.invokeLater(() -> {
+            islandFrame = new IslandFrame(island);
+            islandFrame.setVisible(true);
+        });
     }
 
     private void initializeAnimals() {
@@ -138,66 +147,11 @@ public class IslandSimulation {
 
     }
 
-    @SneakyThrows
-    public void printIsland() {
-        for (int y = 0; y < island.getHeight(); y++) {
-            for (int x = 0; x < island.getWidth(); x++) {
-                Location location = island.getLocation(x, y);
-                if (location.getAnimals().isEmpty()) {
-                    System.out.print("◻️"); // Пустая клетка
-                }
-                else {
-                    // Проверяем типы животных в ячейке и выводим соответствующий символ Unicode
-                    // Хищники
-                    boolean hasBear = location.getAnimals().stream().anyMatch(Bear.class::isInstance);
-                    boolean hasBoa = location.getAnimals().stream().anyMatch(Boa.class::isInstance);
-                    boolean hasEagle = location.getAnimals().stream().anyMatch(Eagle.class::isInstance);
-                    boolean hasFox = location.getAnimals().stream().anyMatch(Fox.class::isInstance);
-                    boolean hasWolf = location.getAnimals().stream().anyMatch(Wolf.class::isInstance);
-
-                    //Травоядные
-                    boolean hasBoar = location.getAnimals().stream().anyMatch(Boar.class::isInstance);
-                    boolean hasBuffalo = location.getAnimals().stream().anyMatch(Buffalo.class::isInstance);
-                    boolean hasCaterpillar = location.getAnimals().stream().anyMatch(Caterpillar.class::isInstance);
-                    boolean hasDeer = location.getAnimals().stream().anyMatch(Deer.class::isInstance);
-                    boolean hasDuck = location.getAnimals().stream().anyMatch(Duck.class::isInstance);
-                    boolean hasGoat = location.getAnimals().stream().anyMatch(Goat.class::isInstance);
-                    boolean hasHorse = location.getAnimals().stream().anyMatch(Horse.class::isInstance);
-                    boolean hasMouse = location.getAnimals().stream().anyMatch(Mouse.class::isInstance);
-                    boolean hasRabbit = location.getAnimals().stream().anyMatch(Rabbit.class::isInstance);
-                    boolean hasSheep = location.getAnimals().stream().anyMatch(Sheep.class::isInstance);
-                    if (hasBear) System.out.print("🐻");
-                    else if (hasBoa) System.out.print("🐍");
-                    else if (hasEagle) System.out.print("🦅");
-                    else if (hasFox) System.out.print("🦊");
-                    else if (hasWolf) System.out.print("🐺");
-                    else if (hasBoar) System.out.print("🐗");
-                    else if (hasBuffalo) System.out.print("🐃");
-                    else if (hasCaterpillar) System.out.print("🐛");
-                    else if (hasDeer) System.out.print("🦌");
-                    else if (hasDuck) System.out.print("🦆");
-                    else if (hasGoat) System.out.print("🐐");
-                    else if (hasHorse) System.out.print("🐎");
-                    else if (hasMouse) System.out.print("🐁");
-                    else if (hasRabbit) System.out.print("🐇");
-                    else if (hasSheep) System.out.print("🐑");
-                }
-            }
-            System.out.println();
-        }
-        simulationCount++;
-        System.out.println();
-        System.out.println("Симуляция номер: " + simulationCount);
-        System.out.println();
-    }
 
     public void updateIsland() {
         Random rand = new Random();
-
-        // Получаем все ячейки острова
         Location[][] locations = island.getLocations();
 
-        // Обновляем координаты всех животных
         for (int i = 0; i < locations.length; i++) {
             for (int j = 0; j < locations[i].length; j++) {
                 List<Animal> animals = locations[i][j].getAnimals();
@@ -210,8 +164,7 @@ public class IslandSimulation {
             }
         }
 
-        // Печатаем обновленное состояние острова
-        printIsland();
+        SwingUtilities.invokeLater(() -> islandFrame.updateIsland());
     }
 
 }

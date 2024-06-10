@@ -1,19 +1,19 @@
 
 Å
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Îº‡¤8ªõ€2J$de4433ac-e8f3-41cd-a3ce-f25882aead35
+java:S1186Š"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Îº‡¤8ªõ€2J$2be5a82c-1ee9-42f8-82f3-0574639c33dc
 Ê
-java:S1186…"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Çè³ïüÿÿÿÿ8ªõ€2J$be237647-b924-476e-b678-db7a82603d54
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Çè³ïüÿÿÿÿ8ªõ€2J$cf58ca19-9872-4692-8111-56fa94495f75
 Ê
-java:S1186‰"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ˆãÇãşÿÿÿÿ8ªõ€2J$07d7481c-00a1-4910-b54e-e9575efec900
+java:S1186’"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ˆãÇãşÿÿÿÿ8ªõ€2J$51088a8e-6c6c-414a-8702-0504cffb068a
 {
-java:S3416"3Update this logger to use "IslandSimulation.class".(óİ¨³ûÿÿÿÿ8ªõ€2J$854a9d2a-456f-46cb-a2c7-f9c267fd833b
+java:S3416"3Update this logger to use "IslandSimulation.class".(óİ¨³ûÿÿÿÿ8ªõ€2J$a46705a9-dff0-4273-87c4-f224d03eb351
 f
-java:S2119!"Save and re-use this "Random".(šŸ«íøÿÿÿÿ8ªõ€2J$1f66dd8d-f035-4946-90c6-7a55da408878
-–
-java:S3776"RRefactor this method to reduce its Cognitive Complexity from 25 to the 15 allowed.(´¯×ò8“ªõ€2J$3fa30e4d-1b0d-45ef-afa3-40acbc7772fc
+java:S2119*"Save and re-use this "Random".(šŸ«íøÿÿÿÿ8ªõ€2J$2922784a-b78d-4060-9fcb-49cb070f5a4c
 g
-java:S2119Ã"Save and re-use this "Random".(šŸ«íøÿÿÿÿ8–ªõ€2J$e4e84c2e-8990-4a0d-97a4-4f7ad3ce08ac
+java:S2119˜"Save and re-use this "Random".(šŸ«íøÿÿÿÿ8–ªõ€2J$1d90d10f-c103-4199-8c1c-a7d6e0896e3f
 m
-java:S1068"*Remove this unused "logger" private field.(»Úëµ8—ªõ€2J$9562b354-b2cb-4851-89d0-16fe40a9cb57
+java:S1068"*Remove this unused "logger" private field.(»Úëµ8—ªõ€2J$6ae3f1f9-0884-4a1b-bfec-e3dafed48b1e
 x
-java:S1068"0Remove this unused "animalLogger" private field.(óİ¨³ûÿÿÿÿ8™ªõ€2J$aced5621-8463-4be3-a415-8fe41f867bc3
+java:S1068"0Remove this unused "animalLogger" private field.(óİ¨³ûÿÿÿÿ8™ªõ€2J$5b8bb63a-8d8a-4fbc-a9d4-43dff4c9d5ae
+v
+java:S1068"3Remove this unused "simulationCount" private field.(ÑÚ‰¤8ÏŒË•€2J$28a3166e-ea37-4959-bf1e-9eceffb1c4e8

@@ -1,6 +1,0 @@
-
-”	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ÓµÇ«ÿÿÿÿÿ8Ğìª€2J$920a547d-bcc0-4b5a-8ed7-635759081f68
-‚
-java:S1118":Add a private constructor to hide the implicit public one.(ÓµÇ«ÿÿÿÿÿ8Ñìª€2J$cd3b38ff-265d-4b6a-930a-1a94f7a98290
-¡
-java:S2142"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(”ı¾8Ôìª€2J$2e4c3bfa-7865-49ea-8f16-16ec4227b2a0

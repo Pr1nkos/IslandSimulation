@@ -22,7 +22,6 @@ public class SimulationService {
         scheduler.scheduleAtFixedRate(this::animalLifeCycle, 0, 1, TimeUnit.SECONDS);
         scheduler.scheduleAtFixedRate(this::printStatistics, 0, 1, TimeUnit.SECONDS);
         scheduler.scheduleAtFixedRate(this::updateIslandAndPrint, 0, 1, TimeUnit.SECONDS);
-        islandSimulation.printIsland(); // Печатаем обновленное состояние острова
     }
 
     private void growPlants() {
@@ -45,7 +44,6 @@ public class SimulationService {
     @SneakyThrows
     private void updateIslandAndPrint(){
         synchronized (System.out) {
-            ConsoleHelper.clearConsole();
             islandSimulation.updateIsland(); // Обновляем состояние острова
             simulationListener.onIslandUpdated(); // Сообщаем слушателю об обновлении острова
         }
